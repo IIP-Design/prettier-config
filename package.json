@@ -1,0 +1,27 @@
+{
+  "name": "@gpa-lab/prettier-config",
+  "version": "0.0.1",
+  "description": "A shared Prettier configuration conforming to the GPA/LAB style guide.",
+  "main": "index.json",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iip-design/prettier-config.git"
+  },
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "gpalab"
+  ],
+  "author": "Marek Rewers, U.S. Department of State, Global Public Affairs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iip-design/prettier-config/issues"
+  },
+  "homepage": "https://iip-design.github.io/prettier-config",
+  "peerDependencies": {
+    "prettier": "1.x"
+  }
+}
