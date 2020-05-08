@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/IIP-Design/prettier-config/compare/v1.0.0...HEAD)
 
-Unreleased changes indicate forthcoming updates.
+_This sections lists changes committed to master since most recent release_
+
+### Changed:
+
+- Switched the value for trailing commas from `none` to `es5`. This makes for cleaner git diffs and matches Prettier's own change in the default value for this property in their v2 release
 
 ## [v1.0.0](https://github.com/IIP-Design/prettier-config/releases/tag/v1.0.0) - 2020.03.17 (Initial Release)
 
 ### Added:
 
-- The base Prettier rule set.
-- Initial documentation.
+- The base Prettier rule set
+- Initial documentation
