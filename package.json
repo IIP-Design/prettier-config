@@ -23,5 +23,8 @@
   "homepage": "https://iip-design.github.io/prettier-config",
   "peerDependencies": {
     "prettier": "^2.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
