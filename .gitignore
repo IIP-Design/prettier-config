@@ -5,3 +5,6 @@ package-lock.json
 # Documentation Site Build
 docs/_site
 docs/Gemfile.lock
+
+# Local Files
+.vscode/
