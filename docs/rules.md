@@ -2,27 +2,27 @@
 title: Rules
 ---
 
-We find that the Prettier team does a good job in chosing sensible defaults so we have by and large preserved the recommended rules. The following four rules are where we diverge from Prettier's defaults. More information on these and all other Prettier configuration options can be found in the [Prettier documentation](https://prettier.io/docs/en/options.html).
+We find that the Prettier team does a good job in choosing sensible defaults so we have by and large preserved the recommended rules. The following four rules are where we diverge from Prettier's defaults. More information on these and all other Prettier configuration options can be found in the [Prettier documentation](https://prettier.io/docs/en/options.html).
 
-### Line Endings
+### Arrow Function Parentheses
 
-**Options:** `auto`, `lf`, `crlf`, `cr`
+**Options:** `always`, `avoid`
 
 **Our Config:**
 
 ```json
-"endOfLine": "lf"
+"arrowParens": "avoid"
 ```
 
 **Default Prettier Config:**
 
 ```json
-"endOfLine": "auto"
+"arrowParens": "always"
 ```
 
-**Purpose:** There are two common types of line endings in text files: 1) the line feed (LF - `\n`) used by Linux and macOS and 2) the carriage return and line feed (CRLF - `\r\n`) used by Windows. This rule sets the default line ending for files in the project.
+**Purpose:** When an arrow function has a single parameter, the parentheses surrounding that parameter is optional. This options determines whether or not to require these optional parentheses.
 
-**Rationale:** Since the majority of our team uses macOS and there is little to no downside to doing so, we explicitly force LF line endings. This is principally because changing the line endings on a file will indicate a change to every line thereby obscuring meaningful modifications and rendering git diffs essentially useless.
+**Rationale:** We believe that including these unnecessary parentheses make the code more noisy and thereby less readable. This was the default position for Prettier until v2.0.0. Adding additional arguments, default values, or type annotations becomes more burdensome when a function does not already have parentheses around it's parameters. The Prettier team felt this impact to developer experience outweighs the gains in readability provided by omitting the parentheses. We disagree.
 
 ### Print Width
 
@@ -42,7 +42,7 @@ We find that the Prettier team does a good job in chosing sensible defaults so w
 
 **Purpose:** Specifies the maximum number of characters per line.
 
-**Rationale:** Team stylistic preference. We find that the default of 80 characters causes unneccessary line breaks, too frequently pushing to two lines what can comfortably fit in one. One hundred charachters is more to our taste.
+**Rationale:** Team stylistic preference. We find that the default of 80 characters causes unnecessary line breaks, too frequently pushing to two lines what can comfortably fit in one. One hundred characters is more to our taste.
 
 ### Quote Props
 
@@ -64,16 +64,16 @@ We find that the Prettier team does a good job in chosing sensible defaults so w
 
 ```js
 const myObject = {
-  one: 'one', // Valid without quotation marks.
+  'one': 'one', // Valid without quotation marks.
   2: 2, // Valid without quotation marks.
   'property-three': 'three', // Requires quotation marks.
-  'property four': 'four' // Requires quotation marks.
+  'property four': 'four', // Requires quotation marks.
 };
 ```
 
 **Rationale:** Team stylistic preference. Using the `consistent` option as we do, objects will default to no quotes around their keys unless one of their keys requires quotes to be a valid identifier. In these cases all keys in that object will be wrapped in quotation marks. We find objects to be more readable when either all or none of the properties are wrapped in quotation marks.
 
-**Note:** Our choice may cause issue in the unlikely edgecase that you use a number as an object key since `obj[123]` is not the same as `obj['123']`. As such, we strongly recommend against using numbers to name object properties.
+**Note:** Our choice may cause issue in the unlikely edge case that you use a number as an object key since `obj[123]` is not the same as `obj['123']`. As such, we strongly recommend against using numbers to name object properties.
 
 ### Single Quotes
 
