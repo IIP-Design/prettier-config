@@ -1,3 +1,7 @@
+# :warning: THIS REPO HAS BEEN ARCHIVED :warning:
+
+The GPA Lab team no longer uses Prettier to format it's code. As such, this repository has been archived and is no longer being maintained. The code is preserved here as a reference.
+
 # GPA/LAB Prettier Config
 
 This package extends [Prettier](https://prettier.io/) with a custom configuration so that code can be automatically formatted to conform to the GPA/LAB style guide.
@@ -26,6 +30,6 @@ For example, to keep all the rules defined by the package with the exception of 
 ```js
 module.exports = {
   ...require('@gpa-lab/prettier-config'),
-  semi: false
+  semi: false,
 };
 ```
